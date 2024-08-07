@@ -1,0 +1,229 @@
+.budgetContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+.budgetContent {
+  display: flex;
+  flex: 1;
+  gap: 20px;
+}
+
+.budgetForm {
+  flex: 1;
+  max-width: 400px;
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.budgetList {
+  flex: 2;
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.budgetList li {
+  list-style: numeric;
+}
+
+.budgetActions {
+  display: flex;
+  gap: 10px;
+}
+
+.formGroup {
+  margin-bottom: 15px;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.formGroup input,
+.formGroup select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.formGroup select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+
+/* New styles for budget items */
+.budgetItems {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.budgetItem {
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.budgetActions {
+  margin-top: 10px;
+}
+
+.errorList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1em 0;
+}
+
+.errorList li {
+  padding: 2px;
+  border-radius: 2px;
+}
+
+.errorMessage {
+  color: #dc4c65;
+  margin-bottom: 0.5em;
+}
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.submitBtn {
+  background-color: #4CAF50; /* Green */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  margin:10px;
+}
+
+.submitBtn:hover {
+  background-color: #45a049;
+}
+
+
+.cancelBtn {
+  background-color: #f44336; /* Red */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  margin:10px;
+}
+
+.cancelBtn:hover {
+  background-color: #e53935;
+}
+.alertBtn {
+  padding: 2px;
+  color: #dc4c65;
+  width: 50%;
+  border: none;
+  margin: 2px;
+  cursor: pointer;
+  position: relative;
+  left: 10px;
+}
+
+.UpdateBtn, .DeleteBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.UpdateBtn {
+  color: #28a745; /* Green */
+}
+
+.DeleteBtn {
+  color: #dc3545; /* Red */
+}
+
+.budgetAlerts {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+}
+
+.budgetAlerts h2 {
+  margin-bottom: 10px;
+  color: #343a40;
+}
+
+.budgetAlerts button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.budgetAlerts button:hover {
+  background-color: #0056b3;
+}
+
+.alertItem {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #ffffff;
+  border: 1px solid #e9ecef;
+  border-radius: 4px;
+}
+
+.alertItem:nth-child(even) {
+  background-color: #f1f1f1;
+}
+
+.alertItem div {
+  margin-bottom: 5px;
+}
+
+.alertCategory {
+  font-weight: bold;
+  color: #dc3545; /* Red color for alert categories */
+}
+
+.alertDetails {
+  color: #495057;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .budgetContent {
+    flex-direction: column;
+  }
+
+  .budgetForm,
+  .budgetList {
+    max-width: 100%;
+  }
+
+  .budgetItems {
+    grid-template-columns: 1fr;
+  }
+}

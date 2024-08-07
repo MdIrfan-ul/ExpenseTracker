@@ -1,0 +1,98 @@
+
+
+.homePageContainer {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+    padding: 2rem; 
+    opacity: 0.9;
+  }
+  
+  .homeImage {
+    flex: 1; 
+    padding: 1rem; 
+ 
+  }
+  
+  .homeImage img {
+    max-width: 100%; 
+    border-radius: 10px;
+    height: auto; 
+  }
+  
+  .homePageDetails {
+    flex: 2; 
+    padding: 1rem;
+  }
+  
+  .homePageDetails h1 {
+    font-size: 1.5rem;
+    line-height: 1.4;
+    color: black; 
+    animation: fadeIn 3s ease-in-out alternate; 
+    font-weight: 550;
+    z-index: 1;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(10px); 
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+ 
+  .homePageDetails ul {
+    list-style: none; 
+    padding: 0;
+  }
+  
+  .homePageDetails li {
+    margin-bottom: 0.5rem;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeIn 1s ease forwards; 
+  }
+  
+  /* Create a delay for each list item */
+  .homePageDetails li:nth-child(1) {
+    animation-delay: 0.2s;
+  }
+  
+  .homePageDetails li:nth-child(2) {
+    animation-delay: 0.4s;
+  }
+  
+  .homePageDetails li:nth-child(3) {
+    animation-delay: 0.6s;
+  }
+  
+  .homePageDetails li:nth-child(4) {
+    animation-delay: 0.8s;
+  }
+  
+  .homePageDetails li:nth-child(5) {
+    animation-delay: 1s;
+  }
+  
+
+
+@media screen and (max-width:768px){
+  .homePageContainer{
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+  }
+
+  .homeImage{
+    flex:0;
+    padding:0.5rem;
+  }
+  .homePageDetails{
+    flex:1
+  }
+}

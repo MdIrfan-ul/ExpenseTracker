@@ -1,0 +1,98 @@
+/* Navbar.module.css */
+
+
+.navbar{
+height: 10%;
+background: #001f3f;
+display: flex;
+justify-content: space-between;
+padding:1rem 2em;
+}
+.checkBox{
+    display: none;
+}
+.navIcon {
+    display: none;
+    cursor: pointer;
+}
+.navIcon span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px;
+    background-color: #fff;
+    transition: 0.4s;
+  }
+
+.navLogo{
+    color:white;
+    font-weight: 550;
+    font-size: 1.5rem;
+}
+
+.navMenus{
+    display: flex;
+    align-items: center;
+    gap:2rem;
+    justify-content: space-evenly;
+}
+
+.navLinks{
+    color:white;
+    padding:2px;
+    position: relative; 
+  text-decoration: none;
+}
+.navLinks::after {
+    content: '';
+    position: absolute;
+    bottom: -2px; 
+    left: 0;
+    width: 100%;
+    height: 2px; 
+    background-color: white; 
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease; 
+  }
+  
+  .navLinks:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+
+
+
+
+ /* Responsive styles */
+ @media (max-width: 768px) {
+    .navbar {
+      position: relative;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .checkBox{
+        position: absolute;
+        right: 10px;
+    }
+    .navIcon {
+      display: block;
+      position: absolute;
+      right:10px;
+    }
+  
+    .checkBox:checked ~ .navMenus {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+  
+    .navMenus {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      padding: 10px 0;
+    }
+    
+  }

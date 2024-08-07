@@ -1,0 +1,40 @@
+/* CalendarCustom.css */
+
+.react-calendar {
+    /* height: 50%; */
+    width: 100%;
+    border: none;
+    box-shadow: 10px 10px 10px 10px rgba(0,0,0,0.1);
+  }
+/* Ensure calendar text is black for visibility */
+.react-calendar__tile {
+    color: black;
+}
+
+/* Ensure active and hover styles are visible */
+.react-calendar__tile--active,
+.react-calendar__tile--now {
+    background: #00aaff; /* Adjust this color as needed */
+    color: white; /* Ensure text is visible on active tile */
+}
+
+/* Style the navigation buttons and header text */
+.react-calendar__navigation__label,
+.react-calendar__navigation__arrow {
+    color: black;
+}
+
+/* Style for selected range (if using range selection) */
+.react-calendar__tile--range {
+    background: #d1e7dd; /* Adjust as needed */
+    color: black;
+}
+
+/* Tooltip and other auxiliary text */
+.react-calendar__tile--rangeStart,
+.react-calendar__tile--rangeEnd,
+.react-calendar__tile--hover {
+    color: black;
+}
+
+/* Additional styles if needed */

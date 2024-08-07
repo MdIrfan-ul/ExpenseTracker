@@ -1,0 +1,251 @@
+/* Transactions.module.css */
+.container {
+    background: #f9f9f9;
+}
+.transactionContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.transactionFormContainer {
+    flex: 1;
+    min-width: 300px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.form div {
+    display: flex;
+    flex-direction: column;
+}
+
+input, select {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+ select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+input[type="date"] {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.submitBtn {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.submitBtn:hover {
+    background-color: #45a049;
+}
+
+.cancelBtn {
+    background-color: #f44336; /* Red */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.cancelBtn:hover {
+    background-color: #e53935;
+}
+
+.calendarContainer {
+    flex: 1;
+    min-width: 300px;
+    margin-top: 20px;
+}
+
+.calendarText{
+    margin:10px;
+    font-size: large;
+    font-weight: 650;
+    text-align: center;
+}
+
+
+.recentTransactions {
+    margin-top: 20px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.cardActions {
+    display: flex;
+    gap: 8px;
+}
+
+.cardBody p {
+    margin: 4px 0;
+}
+
+.UpdateBtn, .DeleteBtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #007BFF;
+}
+
+.UpdateBtn {
+    color: #28a745; /* Green */
+}
+
+.DeleteBtn {
+    color: #dc3545; /* Red */
+}
+
+.errorList {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1em 0;
+}
+
+.errorList li {
+    padding: 2px;
+    border-radius: 2px;
+}
+
+.errorMessage {
+    color: #dc4c65;
+    margin-bottom: 0.5em;
+}
+
+.highlight {
+    background-color: #d1e7dd;
+}
+
+.alertBtn {
+    padding: 2px;
+    color: #dc4c65;
+    width: 50%;
+    border: none;
+    margin: 2px;
+    cursor: pointer;
+    position: relative;
+    left: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .transactionContainer {
+        flex-direction: column;
+    }
+
+    .form {
+        padding: 10px;
+    }
+
+    .submitBtn, .cancelBtn {
+        width: 100%;
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .calendarContainer {
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 12px;
+    }
+
+    .cardHeader {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .cardActions {
+        gap: 4px;
+    }
+
+    .cardBody p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .submitBtn, .cancelBtn {
+        padding: 6px;
+        font-size: 12px;
+    }
+
+    .card {
+        padding: 10px;
+    }
+
+    .cardBody p {
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,111 @@
+.container {
+    padding: 20px;
+    background: linear-gradient(to bottom right, #f0f4f8, #e2e6ea);
+}
+
+.summary {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.summary div {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    text-align: center;
+    flex: 1;
+    min-width: 250px;
+    margin: 10px;
+}
+
+.chartContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.chartContainer div {
+    flex: 1;
+    min-width: 300px;
+    max-width: 100%;
+    margin: 10px;
+}
+
+.recentTransactions {
+    margin-bottom: 20px;
+    overflow-x: auto;
+}
+.filters {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filters select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.filters select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.table th, .table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    
+}
+
+.table th {
+    background-color: #333;
+    color: white;
+}
+
+.table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .summary {
+        flex-direction: column;
+    }
+
+    .chartContainer {
+        flex-direction: column;
+    }
+
+    .chartContainer div {
+        width: 100%;
+    }
+    
+    .filters {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .filters select {
+        width: 100%;
+    }
+}
