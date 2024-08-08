@@ -14,8 +14,6 @@ function SignIn() {
   });
 
   useEffect(()=>{
-
-    console.log("Checking Authentication:=",isAuthenticated);
     if(isAuthenticated){
       navigate('/dashboard');
     }
