@@ -14,6 +14,7 @@ app.use(express.json());
 
 const corsOptions = {
 origin:"https://expnsetrakr.netlify.app/",
+allowedHeaders: ['Content-Type']
 }
 
 app.use(cors(corsOptions));
