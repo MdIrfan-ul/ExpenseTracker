@@ -13,7 +13,7 @@ const app =  express();
 app.use(express.json());
 
 const corsOptions = {
-origin:"https://expnsetrakr.netlify.app/",
+origin:"https://expnsetrakr.netlify.app",
 allowedHeaders: ['Content-Type','Authorization'],
 methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
 credentials: true
