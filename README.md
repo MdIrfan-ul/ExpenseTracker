@@ -86,7 +86,6 @@ ExpenseTracker/
 │   └── package.json
 ├── .gitignore
 ├── README.md
-└── package.json
 ```
 ___
 
