@@ -15,7 +15,7 @@ error:null,
 export const fetchUser = createAsyncThunk("user/fetchUser", async (_, { getState,dispatch, rejectWithValue }) => {
     const token = getState().user.token;
     try {
-      const response = await axios.get(`http://localhost:8000/users/me`, {
+      const response = await axios.get(`https://expensetracker-i0in.onrender.com/users/me`, {
         headers: { Authorization: token },
       });
       const {data} = response;
@@ -32,8 +32,7 @@ export const fetchUser = createAsyncThunk("user/fetchUser", async (_, { getState
 // Registering user
 export const register = createAsyncThunk("user/register",async({name,email,password},{rejectWithValue})=>{
     try {
-        console.log("register data",{name,email,password});
-        const response = await axios.post(`http://localhost:8000/users/register`,{name,email,password});
+        const response = await axios.post(`https://expensetracker-i0in.onrender.com/users/register`,{name,email,password});
         const {data} = response;
         return data;
     } catch (error) {
@@ -46,7 +45,7 @@ export const register = createAsyncThunk("user/register",async({name,email,passw
 // Login 
 export const Login = createAsyncThunk("user/login",async({email,password},{rejectWithValue})=>{
     try {
-        const response= await axios.post(`http://localhost:8000/users/login`,{email,password});
+        const response= await axios.post(`https://expensetracker-i0in.onrender.com/users/login`,{email,password});
         const {data} = response;
         localStorage.setItem('token',data.token);
         return data.token;

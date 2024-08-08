@@ -15,7 +15,7 @@ const initialState = {
 export const fetchBudgets = createAsyncThunk("budget/fetchBudget",async(_,{dispatch,rejectWithValue})=>{
     try {
         const token = localStorage.getItem('token');
-        const response = await axios.get('http://localhost:8000/budgets/',{headers:{Authorization:token}});
+        const response = await axios.get('https://expensetracker-i0in.onrender.com/budgets/',{headers:{Authorization:token}});
         const {data} = response;
         const {budget} = data;
         return budget;
@@ -33,14 +33,12 @@ export const fetchBudgets = createAsyncThunk("budget/fetchBudget",async(_,{dispa
 export const addBudget = createAsyncThunk("budget/addBudget",async(budgetData,{dispatch,rejectWithValue})=>{
     try {
         const token = localStorage.getItem('token');
-        console.log("getting budget data",budgetData);
-        const response = await axios.post(`http://localhost:8000/budgets/add`,budgetData,{headers:{Authorization:token}});
+        const response = await axios.post(`https://expensetracker-i0in.onrender.com/budgets/add`,budgetData,{headers:{Authorization:token}});
         const {data} = response;
         const {budget} = data;
         return budget;
 
     } catch (error) {
-        console.log(error);
         if (error.response && error.response.status === 401) {
             dispatch(logout());
             return rejectWithValue("Session Ended");
@@ -54,14 +52,12 @@ export const addBudget = createAsyncThunk("budget/addBudget",async(budgetData,{d
 export const updateBudget =createAsyncThunk('budget/updateBudget',async({id,budgetData},{dispatch,rejectWithValue})=>{
     try {
         const token = localStorage.getItem('token');
-        const response = await axios.put(`http://localhost:8000/budgets/${id}`,budgetData,{headers:{Authorization:token}});
+        const response = await axios.put(`https://expensetracker-i0in.onrender.com/budgets/${id}`,budgetData,{headers:{Authorization:token}});
         const {data} = response;
-        console.log("After updation data",data);
         const {budget} = data;
         return budget;
         
     } catch (error) {
-        console.log(error);
         if (error.response && error.response.status === 401) {
             dispatch(logout());
             return rejectWithValue("Session Ended");
@@ -75,7 +71,7 @@ export const updateBudget =createAsyncThunk('budget/updateBudget',async({id,budg
 export const deleteBudget = createAsyncThunk("budget/deleteBudget",async(id,{rejectWithValue})=>{
 try {
     const token = localStorage.getItem('token');
-    await axios.delete(`http://localhost:8000/budgets/${id}`,{headers:{Authorization:token}});
+    await axios.delete(`https://expensetracker-i0in.onrender.com/budgets/${id}`,{headers:{Authorization:token}});
    return id;
 } catch (error) {
     if (error.response && error.response.status === 401) {
@@ -90,7 +86,7 @@ try {
 export const checkAlerts = createAsyncThunk("budget/fetchAlerts",async(_,{rejectWithValue})=>{
     try {
         const token = localStorage.getItem('token');
-        const response =  await axios.get(`http://localhost:8000/budgets/alerts`,{headers:{Authorization:token}});
+        const response =  await axios.get(`https://expensetracker-i0in.onrender.com/budgets/alerts`,{headers:{Authorization:token}});
         const {data} = response; 
         return data.alerts;
 

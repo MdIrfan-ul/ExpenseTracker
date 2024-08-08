@@ -16,7 +16,7 @@ const initialState = {
 export const createTransaction = createAsyncThunk("transaction/create",async(transactionData,{rejectWithValue})=>{
     try {
         const token = localStorage.getItem('token');
-        const response = await axios.post(`http://localhost:8000/transactions/add`,transactionData,{headers:{Authorization:token}});
+        const response = await axios.post(`https://expensetracker-i0in.onrender.com/transactions/add`,transactionData,{headers:{Authorization:token}});
         const {data} = response;
         return data.Transactions;
     } catch (error) {
@@ -34,12 +34,11 @@ export const createTransaction = createAsyncThunk("transaction/create",async(tra
 export const fetchTransaction = createAsyncThunk("transaction/get",async(_,{dispatch,rejectWithValue})=>{
     try {
         const token = localStorage.getItem('token');
-        const response = await axios.get(`http://localhost:8000/transactions`,{headers:{Authorization:token}});
+        const response = await axios.get(`https://expensetracker-i0in.onrender.com/transactions`,{headers:{Authorization:token}});
         const {data} = response;
         const {Transactions} = data;
         return Transactions;
     } catch (error) {
-        console.log(error);
         if (error.response && error.response.status === 401) {
             dispatch(logout());
             return rejectWithValue("Session Ended");
@@ -53,7 +52,7 @@ export const fetchTransaction = createAsyncThunk("transaction/get",async(_,{disp
 export const updateTransaction = createAsyncThunk("transaction/updateTransaction",async({id,transactionData},{rejectWithValue})=>{
     try {
         const token = localStorage.getItem('token');
-        const response = await axios.put(`http://localhost:8000/transactions/${id}`,transactionData,{headers:{Authorization:token}});
+        const response = await axios.put(`https://expensetracker-i0in.onrender.com/transactions/${id}`,transactionData,{headers:{Authorization:token}});
         const {data} = response;
         return data.Transactions;
     } catch (error) {
@@ -69,7 +68,7 @@ export const updateTransaction = createAsyncThunk("transaction/updateTransaction
 export const deleteTransaction = createAsyncThunk("transaction/deleteTransaction",async(id,{rejectWithValue})=>{
 try {
     const token = localStorage.getItem('token');
-    await axios.delete(`http://localhost:8000/transactions/${id}`,{headers:{Authorization:token}});
+    await axios.delete(`https://expensetracker-i0in.onrender.com/transactions/${id}`,{headers:{Authorization:token}});
    return id;
 } catch (error) {
     if (error.response && error.response.status === 401) {
@@ -84,14 +83,13 @@ try {
 export const fetchCategoryBreakdown = createAsyncThunk("transaction/categoryBreakdown", async (_, { dispatch,rejectWithValue }) => {
     try {
         const token = localStorage.getItem('token');
-        const response = await axios.get(`http://localhost:8000/transactions/categorybreakdown`, { headers: { Authorization: token } });
+        const response = await axios.get(`https://expensetracker-i0in.onrender.com/transactions/categorybreakdown`, { headers: { Authorization: token } });
         const { data } = response;
         const {breakdown} = data;
         return breakdown;
     } catch (error) {
         if (error.response && error.response.status === 401) {
             dispatch(logout());
-            console.log("LOGGING OUT");
             return rejectWithValue("Session Ended");
         }
         return rejectWithValue(error.response.data.message);
@@ -102,7 +100,7 @@ export const fetchCategoryBreakdown = createAsyncThunk("transaction/categoryBrea
 export const fetchAnalyticsData = createAsyncThunk("transaction/analyticsData", async (_, {dispatch, rejectWithValue }) => {
     try {
         const token = localStorage.getItem('token');
-        const response = await axios.get(`http://localhost:8000/transactions/analyticsdata`, { headers: { Authorization: token } });
+        const response = await axios.get(`https://expensetracker-i0in.onrender.com/transactions/analyticsdata`, { headers: { Authorization: token } });
         const { data } = response;
         const {analyticsData} = data;
         return analyticsData;
