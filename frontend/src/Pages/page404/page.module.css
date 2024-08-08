@@ -1,0 +1,15 @@
+.error{
+    width:100%;
+    z-index: 10;
+    position: relative;
+}
+.error img{
+    position: absolute;
+    top:0;
+    bottom:0;
+    opacity: 0.4;
+    width:100%;
+    z-index: -2;
+
+}
+
