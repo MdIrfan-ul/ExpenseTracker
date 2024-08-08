@@ -14,17 +14,12 @@ app.use(express.json());
 
 const corsOptions = {
 origin:"https://expnsetrakr.netlify.app/",
-allowedHeaders: ['Content-Type'],
+allowedHeaders: ['Content-Type','Authorization'],
 methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
 credentials: true
 }
-app.use((req, res, next) => {
-    console.log('Origin:', req.headers.origin);
-    next();
-});
 
 app.use(cors(corsOptions));
-// app.use(cors(corsOptions));
 
 app.get("/",(req,res)=>{
     res.json({"greet":"welcome to Expense Tracker"});
