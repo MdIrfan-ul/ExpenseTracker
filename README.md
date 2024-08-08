@@ -70,7 +70,7 @@ npm start
 ```
 ___
 ## Folder Structure
-
+```sh
 expense-tracker/
 ├── frontend/               # React frontend
 │   ├── public/
@@ -87,6 +87,7 @@ expense-tracker/
 ├── .gitignore
 ├── README.md
 └── package.json
+```
 ___
 
 ## Usage
