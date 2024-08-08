@@ -4,7 +4,7 @@
 This Expense Tracker application is designed to help users manage their personal finances. It allows users to track their income and expenses, categorize their transactions, set budgets, and receive alerts. The application also provides graphical reports and analytics for better financial planning.
 
 ## Site Overview
-**Live**: [![ExpenseTracker](https://expnsetrakr.netlify.app/)]
+**Live**: <h3><a href='https://expnsetrakr.netlify.app/'><strong>Expense Tracker</strong></a></h3>
 
 ## Technologies Used
 
