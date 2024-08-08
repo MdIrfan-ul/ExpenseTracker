@@ -71,7 +71,7 @@ npm start
 ___
 ## Folder Structure
 ```sh
-expense-tracker/
+ExpenseTracker/
 ├── frontend/               # React frontend
 │   ├── public/
 │   ├── src/
